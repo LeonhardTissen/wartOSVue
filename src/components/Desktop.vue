@@ -4,6 +4,7 @@
 			<div class="link w-28 h-28 cursor-pointer hover:bg-white hover:bg-opacity-10 rounded-lg p-1"
 				v-for="desktopIcon in desktopIcons.sort((a, b) => a.iconname.localeCompare(b.iconname))"
 				:key="desktopIcon.iconname"
+				@pointerdown="launchProgram({ ...desktopIcon })"
 			>
 				<img class="icon m-auto h-14 rounded-lg" draggable="false" :src=desktopIcon.imagedata>
 				<p class="name text-center">{{ desktopIcon.iconname }}</p>
@@ -15,6 +16,7 @@
 </template>
   
 <script lang="ts">
+import { launchProgram } from '../window';
 import { desktopIcons } from '../icons';
 import TaskbarElement from './Taskbar.vue';
 
@@ -25,7 +27,8 @@ export default {
 	},
 	data() {
 		return {
-			desktopIcons
+			desktopIcons,
+			launchProgram
 		}
 	},
 }

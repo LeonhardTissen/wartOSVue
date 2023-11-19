@@ -317,7 +317,7 @@ export const desktopIcons: Array<DesktopIcon> = [
         "width": 600,
         "windowcolor": "#111111",
         "windowname": "Lights on!",
-        "zoom": 0.7
+        "zoom": 0.6
     },
     {
         "category": "Games",
