@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Miscellaneous -->
+    <url>
+        <loc>htps://warze.org/cmd</loc>
+    </url>
+    <url>
+        <loc>https://leonhardtissen.github.io/spaceBackgroundJS/</loc>
+    </url>
+    <url>
+        <loc>https://leonhardtissen.github.io/cursorJumperJS/</loc>
+    </url>
+    <url>
+        <loc>https://fun.warze.org/notepad</loc>
+    </url>
+    <url>
+        <loc>https://leonhardtissen.github.io/DiscordAboutMeRoles/</loc>
+    </url>
+    <url>
+        <loc>htps://warze.org/wartos/workshop</loc>
+    </url>
+    <url>
+        <loc>https://fun.warze.org/calculator</loc>
+    </url>
+    <url>
+        <loc>https://fun.warze.org/</loc>
+    </url>
+
+    <!-- Games -->
+    <url>
+        <loc>https://leonhardtissen.github.io/microGameJS/</loc>
+    </url>
+    <url>
+        <loc>https://fun.warze.org/laibart</loc>
+    </url>
+    <url>
+        <loc>htps://warze.org/casino1</loc>
+    </url>
+    <url>
+        <loc>htps://warze.org/casinodrink</loc>
+    </url>
+    <url>
+        <loc>htps://warze.org/casino2</loc>
+    </url>
+    <url>
+        <loc>htps://warze.org/casino3</loc>
+    </url>
+    <url>
+        <loc>https://happywheelslevels.netlify.app/</loc>
+    </url>
+    <url>
+        <loc>https://fun.warze.org/jellyventure</loc>
+    </url>
+    <url>
+        <loc>https://doomed.io/</loc>
+    </url>
+    <url>
+        <loc>https://lightson.warze.org/</loc>
+    </url>
+    <url>
+        <loc>https://flagquiz.warze.org/</loc>
+    </url>
+    <url>
+        <loc>https://reactidle.warze.org/</loc>
+    </url>
+    <url>
+        <loc>https://pushy.warze.org/</loc>
+    </url>
+
+    <!-- Community -->
+    <url>
+        <loc>htps://warze.org/test</loc>
+    </url>
+    <url>
+        <loc>htps://warze.org/permaplace</loc>
+    </url>
+    <url>
+        <loc>htps://warze.org/gifun</loc>
+    </url>
+    <url>
+        <loc>htps://warze.org/lb</loc>
+    </url>
+
+    <!-- Social -->
+    <url>
+        <loc>https://youtube.com/warze</loc>
+    </url>
+    <url>
+        <loc>https://github.com/LeonhardTissen</loc>
+    </url>
+    <url>
+        <loc>https://discord.gg/jtcqgvkZY7</loc>
+    </url>
+
+</urlset>
