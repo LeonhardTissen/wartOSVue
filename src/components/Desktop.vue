@@ -1,5 +1,5 @@
 <template>
-	<div id="desktop" class="flex flex-col flex-wrap overflow-hidden">
+	<div id="desktop" class="flex flex-col flex-wrap overflow-hidden h-screen">
 		<div id="icons" class="relative flex grow flex-col flex-wrap content-start gap-1 select-none p-2">
 			<div id="windows" class="absolute top-0 left-0 w-full h-full pointer-events-none"></div>
 			<a :href="desktopIcon.url.replace('+', '')"
