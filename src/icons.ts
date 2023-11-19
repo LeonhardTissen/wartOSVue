@@ -290,7 +290,7 @@ export const desktopIcons: Array<DesktopIcon> = [
         "category": "Games",
         "height": 600,
         "iconname": "Doomed.io",
-        "imagedata": "doomed.png",
+        "imagedata": "doomed.jpg",
         "url": "https://doomed.io/",
         "width": 800,
         "windowcolor": "#925851",
