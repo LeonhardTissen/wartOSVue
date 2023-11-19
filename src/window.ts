@@ -28,9 +28,10 @@ export function launchProgram(program: DesktopIcon): false {
 	windows.innerHTML += /*html*/`
 	<div id="${windowId}" class="rounded-lg bg-slate-800 bg-opacity-40 backdrop-blur absolute flex flex-col resize pointer-events-auto overflow-hidden"
 		style="width: ${program.width}px; height: ${program.height}px; top: ${windowY}px; left: ${windowX}px; min-width: 300px; min-height: 30px;">
-		<div class="h-8 flex justify-between flex-row"
-			onpointerdown="document.getElementById('${windowId}').classList.add('dragging');">
-			<p class="p-1 select-none">${program.windowname}</p>
+		<div class="h-8 flex justify-between flex-row">
+			<div class="grow" onpointerdown="document.getElementById('${windowId}').classList.add('dragging');">
+				<p class="p-1 select-none">${program.windowname}</p>
+			</div>
 			<div class="flex justify-center items-center h-full">
 				<!-- Reload iframe -->
 				<div class="py-2 hover:bg-white hover:bg-opacity-10 cursor-pointer"

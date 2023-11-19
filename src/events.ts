@@ -1,6 +1,9 @@
 import { conditionalClass } from './utils/dom';
 import { changePx } from './utils/px';
 
+const touchSnapMargin = 32;
+const mouseSnapMargin = 16;
+
 document.body.addEventListener('mousemove', (ev) => {
 	if (ev.buttons !== 1) {
 		removeAllDragging();
@@ -13,9 +16,9 @@ document.body.addEventListener('mousemove', (ev) => {
 
 		element.classList.remove('maximized');
 
-		conditionalClass(element, 'snapleft', ev.clientX < 10);
-		conditionalClass(element, 'snapright', ev.clientX > window.innerWidth - 10);
-		conditionalClass(element, 'maximized', ev.clientY < 10);
+		conditionalClass(element, 'snapleft', ev.clientX < mouseSnapMargin);
+		conditionalClass(element, 'snapright', ev.clientX > window.innerWidth - mouseSnapMargin);
+		conditionalClass(element, 'maximized', ev.clientY < mouseSnapMargin);
 	});
 });
 
@@ -51,7 +54,9 @@ document.body.addEventListener('touchmove', (ev) => {
 		element.style.left = changePx(element.style.left, touchDiff.x);
 		element.style.top = changePx(element.style.top, touchDiff.y);
 
-		element.classList.remove('maximized');
+		conditionalClass(element, 'snapleft', touch.clientX < touchSnapMargin);
+		conditionalClass(element, 'snapright', touch.clientX > window.innerWidth - touchSnapMargin);
+		conditionalClass(element, 'maximized', touch.clientY < touchSnapMargin);
 	});
 
 	lastTouchPos.x = touch.clientX;
