@@ -1,19 +1,31 @@
+import { conditionalClass } from './utils/dom';
 import { changePx } from './utils/px';
 
 document.body.addEventListener('mousemove', (ev) => {
+	if (ev.buttons !== 1) {
+		removeAllDragging();
+		return;
+	}
+
 	document.querySelectorAll<HTMLElement>('.dragging').forEach((element) => {
 		element.style.left = changePx(element.style.left, ev.movementX);
 		element.style.top = changePx(element.style.top, ev.movementY);
 
 		element.classList.remove('maximized');
+
+		conditionalClass(element, 'snapleft', ev.clientX < 10);
+		conditionalClass(element, 'snapright', ev.clientX > window.innerWidth - 10);
+		conditionalClass(element, 'maximized', ev.clientY < 10);
 	});
 });
 
-document.body.addEventListener('pointerup', () => {
+function removeAllDragging(): void {
 	document.querySelectorAll<HTMLElement>('.dragging').forEach((element) => {
 		element.classList.remove('dragging');
 	});
-});
+}
+
+document.body.addEventListener('pointerup', removeAllDragging);
 
 const lastTouchPos = {
 	x: 0,

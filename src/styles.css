@@ -21,12 +21,25 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-.maximized {
-	width: 100% !important;
-	height: 100% !important;
-	top: 0 !important;
-	left: 0 !important;
-}
 .minimized {
 	display: none !important;
+}
+.snapright, .snapleft, .maximized {
+	top: 0 !important;
+	height: 100% !important;
+	transition: all 0.1s cubic-bezier(.15,.91,.62,1);
+}
+.snapright, .snapleft {
+	width: 50% !important;
+}
+.snapright {
+	left: initial !important;
+	right: 0 !important;
+}
+.snapleft {
+	left: 0 !important;
+}
+.maximized {
+	left: 0 !important;
+	width: 100% !important;
 }
