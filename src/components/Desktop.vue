@@ -37,7 +37,7 @@ export default {
 	
 <style scoped>
 #icons {
-	height: calc(100vh - var(--taskbar-height));
+	height: calc(100svh - var(--taskbar-height));
 }
 .name {
 	text-shadow: 1px 1px 2px black;
