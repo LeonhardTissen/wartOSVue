@@ -1,14 +1,14 @@
 <template>
-	<SampleElement msg="Hello, World!"/>
+	<Desktop/>
 </template>
 
 <script lang="ts">
-import SampleElement from './components/SampleElement.vue';
+import Desktop from './components/Desktop.vue';
 
 export default {
 	name: 'App',
 	components: {
-		SampleElement
+		Desktop
 	}
 }
 </script>
