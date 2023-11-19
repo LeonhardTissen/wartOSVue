@@ -27,8 +27,9 @@ export function launchProgram(program: DesktopIcon): false {
 	const zoomPrc = `${100 / program.zoom}%`;
 	windows.innerHTML += /*html*/`
 	<div id="${windowId}" class="rounded-lg bg-slate-800 bg-opacity-40 backdrop-blur absolute flex flex-col resize pointer-events-auto overflow-hidden"
-		style="width: ${program.width}px; height: ${program.height}px; top: ${windowY}px; left: ${windowX}px">
-		<div class="h-8 flex justify-between flex-row">
+		style="width: ${program.width}px; height: ${program.height}px; top: ${windowY}px; left: ${windowX}px; min-width: 300px; min-height: 30px;">
+		<div class="h-8 flex justify-between flex-row"
+			onpointerdown="document.getElementById('${windowId}').classList.add('dragging');">
 			<p class="p-1 select-none">${program.windowname}</p>
 			<div class="flex justify-center items-center h-full">
 				<!-- Reload iframe -->
