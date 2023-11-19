@@ -5,10 +5,10 @@
 			<a :href="desktopIcon.url.replace('+', '')"
 				class="link w-28 h-28 cursor-pointer hover:bg-white hover:bg-opacity-10 rounded-lg p-1"
 				v-for="desktopIcon in desktopIcons.sort((a, b) => a.iconname.localeCompare(b.iconname))"
-				:key="'/icons/' + desktopIcon.iconname"
+				:key="desktopIcon.iconname"
 				@click.prevent="launchProgram({ ...desktopIcon })"
 			>
-				<img class="icon m-auto h-14 rounded-lg pointer-events-none" :src=desktopIcon.imagedata>
+				<img class="icon m-auto h-14 rounded-lg pointer-events-none" :src="'/icons/' + desktopIcon.imagedata">
 				<p class="name text-center">{{ desktopIcon.iconname }}</p>
 			</a>
 		</div>
