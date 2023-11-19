@@ -3,6 +3,7 @@ import { changePx } from './utils/px';
 
 const touchSnapMargin = 32;
 const mouseSnapMargin = 16;
+const actionBarHeight = 32;
 
 document.body.addEventListener('mousemove', (ev) => {
 	if (ev.buttons !== 1) {
@@ -13,6 +14,20 @@ document.body.addEventListener('mousemove', (ev) => {
 	document.querySelectorAll<HTMLElement>('.dragging').forEach((element) => {
 		element.style.left = changePx(element.style.left, ev.movementX);
 		element.style.top = changePx(element.style.top, ev.movementY);
+
+		const { x, y, width } = element.getBoundingClientRect();
+		if (x > ev.clientX) {
+			element.style.left = changePx(element.style.left, x - ev.clientX);
+		}
+		if (x + width < ev.clientX) {
+			element.style.left = changePx(element.style.left, ev.clientX - (x + width));
+		}
+		if (y > ev.clientY) {
+			element.style.top = changePx(element.style.top, ev.clientY - y);
+		}
+		if (y + actionBarHeight < ev.clientY) {
+			element.style.top = changePx(element.style.top, ev.clientY - (y + actionBarHeight));
+		}
 
 		element.classList.remove('maximized');
 

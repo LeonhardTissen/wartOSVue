@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import Desktop from './components/Desktop.vue';
-import './styles.css';
+import './wartos.css';
 
 export default {
 	name: 'App',
