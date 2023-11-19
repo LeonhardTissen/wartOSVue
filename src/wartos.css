@@ -11,9 +11,12 @@ body {
 	background-image: url('./assets/images/win11wallpaper.jpg');
 	background-size: cover;
 	background-position: center;
+}
+html, body {
+	margin: 0;
 	background-color: var(--main);
 	color: var(--main-text);
-	margin: 0;
+	overscroll-behavior: contain;
 }
 #app {
 	font-family: Geist, Helvetica, Arial, sans-serif;
