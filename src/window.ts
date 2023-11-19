@@ -5,54 +5,80 @@ let windowX: number = 0;
 let windowY: number = 0;
 let windowZIndex: number = 1;
 
-export function launchProgram(program: DesktopIcon): void {
+
+export function launchProgram(program: DesktopIcon): false {
 	// URLs starting with + means open in a new tab because CORS is unhappy
 	let url: string = program.url;
 	if (program.url.startsWith('+')) {
 		const trimmedUrl = program.url.replace('+', '');
 		window.open(trimmedUrl, '_blank');
-		return;
+		return false;
 	} else if (program.url.startsWith('/')) {
 		url = 'https://warze.org' + url;
 	}
-
+	
 	windowX += windowNewOffset;
 	windowY += windowNewOffset;
 	windowZIndex ++;
 
-	const windowContainer = document.createElement('div');
-	windowContainer.classList.add('rounded-lg', 'bg-slate-800', 'bg-opacity-40', 'backdrop-blur', 'fixed', 'flex', 'flex-col', 'resize-both');
-	windowContainer.style.width = `${program.width}px`;
-	windowContainer.style.height = `${program.height}px`;
-	windowContainer.style.top = `${windowY}px`;
-	windowContainer.style.left = `${windowX}px`;
+	const windows = document.getElementById('windows') as HTMLElement;
 
-	// The top bar will all the action buttons
-	const windowActions = document.createElement('div');
-	windowActions.classList.add('h-8', 'flex', 'justify-between', 'flex-row');
-	windowContainer.appendChild(windowActions);
-
-	// The name of the window
-	const windowName = document.createElement('p');
-	windowName.classList.add('p-2')
-	windowName.innerText = program.windowname;
-	windowActions.appendChild(windowName);
-
-	// The content of the window, holding the iframe
-	const windowContent = document.createElement('div');
-	windowContent.classList.add('grow');
-	windowContainer.appendChild(windowContent);
-
-	// An iframe to the page
-	const windowIFrame = document.createElement('iframe');
-	windowIFrame.classList.add('border-none', 'outline-none', 'origin-top-left')
-    windowIFrame.src = url;
-    windowIFrame.width = `${100 / program.zoom}%`;
-    windowIFrame.height = `${100 / program.zoom}%`;
-    windowIFrame.style.transform = `scale(${program.zoom})`;
-    windowContent.appendChild(windowIFrame);
-
-	document.body.appendChild(windowContainer);
-
-	console.log(program);
+	const windowId = (Math.floor(Math.random() * 1_000_000_000_000)).toString(36);
+	const zoomPrc = `${100 / program.zoom}%`;
+	windows.innerHTML += /*html*/`
+	<div id="${windowId}" class="rounded-lg bg-slate-800 bg-opacity-40 backdrop-blur absolute flex flex-col resize pointer-events-auto overflow-hidden"
+		style="width: ${program.width}px; height: ${program.height}px; top: ${windowY}px; left: ${windowX}px">
+		<div class="h-8 flex justify-between flex-row">
+			<p class="p-1 select-none">${program.windowname}</p>
+			<div class="flex justify-center items-center h-full">
+				<!-- Reload iframe -->
+				<div class="py-2 hover:bg-white hover:bg-opacity-10 cursor-pointer"
+					onclick="document.getElementById('${windowId}iframe').src = document.getElementById('${windowId}iframe').src"
+				>
+					<svg width="50" height="20">
+						<path d="M20,5 18,5 18,15 32,15 32,5 25,5 27,3 27,7 25,5" fill="none" stroke="white" stroke-linejoin="round" stroke-linecap="round" stroke-width="2"></path>
+					</svg>
+				</div>
+				<!-- Fullscreen -->
+				<div class="py-2 hover:bg-white hover:bg-opacity-10 cursor-pointer"
+					onclick="document.getElementById('${windowId}iframe').requestFullscreen();"
+				>
+					<svg width="50" height="20">
+						<path d="M29,5 32,5 32,8 M32,12 32,15 29,15 M21,5 18,5 18,8 M18,12 18,15 21,15" fill="none" stroke="white" stroke-linejoin="round" stroke-linecap="round" stroke-width="2"></path>
+					</svg>
+				</div>
+				<!-- Minimize window -->
+				<div class="py-2 hover:bg-white hover:bg-opacity-10 cursor-pointer"
+					onclick="document.getElementById('${windowId}').classList.add('minimized')";
+				>
+					<svg width="50" height="20">
+						<path d="M20,10 30,10" fill="none" stroke="white" stroke-linejoin="round" stroke-linecap="round" stroke-width="2"></path>
+					</svg>
+				</div>
+				<!-- Maximize window -->
+				<div class="py-2 hover:bg-white hover:bg-opacity-10 cursor-pointer"
+					onclick="document.getElementById('${windowId}').classList.toggle('maximized')";
+				>
+					<svg width="50" height="20">
+						<path d="M18,5 32,5 32,15 18,15 18,5" fill="none" stroke="white" stroke-linejoin="round" stroke-linecap="round" stroke-width="2"></path>
+					</svg>
+				</div>
+				<!-- Close window -->
+				<div class="py-2 hover:bg-red-500 cursor-pointer"
+					onclick="document.getElementById('${windowId}').remove();"
+				>
+					<svg width="50" height="20">
+						<path d="M20,5 30,15 M30,5 20,15 25" fill="none" stroke="white" stroke-linejoin="round" stroke-linecap="round" stroke-width="2"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+		<div class="grow">
+			<iframe id="${windowId}iframe" src="${url}" class="border-none outline-none origin-top-left"
+				style="width: ${zoomPrc}; height: ${zoomPrc}; transform: scale(${program.zoom});"
+			></iframe>
+		</div>
+	</div>
+	`;
+	return false;
 }
