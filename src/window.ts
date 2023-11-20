@@ -83,3 +83,5 @@ export function launchProgram(program: DesktopIcon): false {
 	`;
 	return false;
 }
+
+window.launchProgram = launchProgram;

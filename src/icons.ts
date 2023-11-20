@@ -6,7 +6,7 @@ export interface DesktopIcon {
     iconname: string;
     imagedata: string;
     url: string;
-    windowcolor: string;
+    windowcolor?: string;
     windowname: string;
 }
 
@@ -362,5 +362,15 @@ export const desktopIcons: Array<DesktopIcon> = [
         "windowcolor": "#FFFFFF",
         "windowname": "Pushy",
         "zoom": 1
+    },
+    {
+        "category": "Social",
+        "height": 600,
+        "iconname": "Profiles",
+        "imagedata": "group.svg",
+        "url": "https://warze.org/profiles",
+        "width": 800,
+        "windowname": "User Profiles",
+        "zoom": 0.6,
     }
 ]

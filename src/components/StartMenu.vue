@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { desktopIcons } from '@/icons';
+import { updateSearch } from '@/startmenu';
 
 export default {
 	name: 'StartMenu',
@@ -31,25 +31,7 @@ export default {
 				searchQuery = target.value.toLowerCase();	
 			}
 
-			const searchresults = document.getElementById('searchresults') as HTMLElement;
-			searchresults.innerText = '';
-
-			const matchingDesktopIcons = desktopIcons.filter((desktopIcon) => {
-				const { iconname, category, windowname } = desktopIcon;
-				const searchString = (iconname + category + windowname).toLowerCase();
-				return searchString.includes(searchQuery);
-			});
-
-			matchingDesktopIcons.forEach((desktopIcon) => {
-				searchresults.innerHTML += /*html*/`
-				<div id="" class="p-2 flex items-center gap-2 hover:bg-white hover:bg-opacity-10 cursor-pointer"
-					onclick="launchProgram(${desktopIcon})"
-				>
-					<img src="/icons/${desktopIcon.imagedata}" class="rounded-lg h-8">
-					<p>${desktopIcon.iconname}</p>
-				</div>
-				`
-			});
+			updateSearch(searchQuery);
 		}
 	},
 	mounted() {
