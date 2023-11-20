@@ -372,5 +372,16 @@ export const desktopIcons: Array<DesktopIcon> = [
         "width": 800,
         "windowname": "User Profiles",
         "zoom": 0.6,
-    }
+    },
+    {
+        "category": "Miscellaneous",
+        "height": 700,
+        "iconname": "Microsoft Edge",
+        "imagedata": "edge.svg",
+        "url": "https://bing.com/",
+        "width": 800,
+        "windowcolor": "#FFFFFF",
+        "windowname": "Microsoft Edge",
+        "zoom": 1
+    },
 ]
