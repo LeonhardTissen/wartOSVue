@@ -5,7 +5,6 @@ let windowX: number = 0;
 let windowY: number = 0;
 let windowZIndex: number = 1;
 
-
 export function launchProgram(program: DesktopIcon): false {
 	// URLs starting with + means open in a new tab because CORS is unhappy
 	let url: string = program.url;

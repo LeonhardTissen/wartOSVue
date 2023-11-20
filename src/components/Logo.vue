@@ -18,5 +18,7 @@ export default {
 <style scoped>
 svg {
 	filter: invert(var(--invert));
+	width: 100%;
+	height: 100%;
 }
 </style>

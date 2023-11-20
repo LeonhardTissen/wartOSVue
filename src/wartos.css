@@ -6,7 +6,7 @@
 	--main: #07101d80;
 	--main-text: #FFF;
 	--main-invert: 0;
-	--taskbar-height: 50px;
+	--taskbar-height: 48px;
 }
 body {
 	background-image: url('./assets/images/win11wallpaper.jpg');

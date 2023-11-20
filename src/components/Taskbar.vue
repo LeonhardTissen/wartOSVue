@@ -1,7 +1,7 @@
 <template>
-	<div id="taskbar" class="w-full h-12 bg-slate-800 bg-opacity-40 backdrop-blur flex justify-between">
+	<div id="taskbar" class="w-full bg-slate-800 bg-opacity-40 backdrop-blur flex justify-between">
 		<div id="left">
-			<LogoIcon class="p-2 h-12 w-12"/>
+			<LogoIcon @pointerdown="clickCornerButton" class="p-2 hover:bg-white hover:bg-opacity-10 cursor-pointer"/>
 		</div>
 		<div id="tasks" class="grow"></div>
 		<div id="tray">
@@ -11,6 +11,7 @@
 </template>
 
 <script lang="ts">
+import { hideStartMenu, showStartMenu } from '@/startmenu';
 import LogoIcon from './Logo.vue';
 import TimeDate from './TimeDate.vue';
 
@@ -19,6 +20,16 @@ export default {
 	components: {
 		LogoIcon,
 		TimeDate,
+	},
+	methods: {
+		clickCornerButton() {
+			const startmenu = document.getElementById('startmenu') as HTMLElement;
+			if (startmenu.style.display !== 'flex') {
+				showStartMenu();
+			} else {
+				hideStartMenu();
+			}
+		}
 	}
 }
 </script>
@@ -26,5 +37,6 @@ export default {
 <style scoped>
 #taskbar {
 	background-color: var(--main);
+	height: var(--taskbar-height);
 }
 </style>
