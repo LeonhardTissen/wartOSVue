@@ -23,10 +23,10 @@ export function launchProgram(program: DesktopIcon): false {
 	const windows = document.getElementById('windows') as HTMLElement;
 
 	const windowId = (Math.floor(Math.random() * (1e+20))).toString(36);
-	const maximizedWindow = window.innerWidth < 1080 ? 'maximized' : '';
+	const maximizedWindow = window.innerWidth < 1080 ? 'maximized' : 'programAnimation';
 	const zoomPrc = `${100 / program.zoom}%`;
 	windows.innerHTML += /*html*/`
-	<div id="${windowId}" class="program rounded-lg bg-slate-800 bg-opacity-40 backdrop-blur ${maximizedWindow} absolute flex flex-col resize pointer-events-auto overflow-hidden"
+	<div id="${windowId}" class="rounded-lg bg-slate-800 bg-opacity-40 backdrop-blur ${maximizedWindow} absolute flex flex-col resize pointer-events-auto overflow-hidden"
 		style="width: ${program.width}px; height: ${program.height}px; top: ${windowY}px; left: ${windowX}px; min-width: 300px; min-height: 30px;">
 		<div class="h-8 flex justify-between flex-row">
 			<div class="grow" onpointerdown="document.getElementById('${windowId}').classList.add('dragging');">

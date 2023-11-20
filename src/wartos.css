@@ -53,7 +53,7 @@ html, body {
 #startmenu {
 	animation: appear 0.3s cubic-bezier(.38,1.25,.8,1);
 }
-.program {
+.programAnimation {
 	animation: appear 0.3s cubic-bezier(.4,1.59,.8,1);
 }
 @keyframes appear {
