@@ -2,6 +2,10 @@
 	font-family: Geist;
 	src: url(./assets/fonts/GeistVF.woff2) format(woff2);
 }
+@viewport {
+	width: device-width;
+	zoom: 1.0;
+}
 :root {
 	--main: #07101d80;
 	--main-text: #FFF;
