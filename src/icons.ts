@@ -221,6 +221,17 @@ export const desktopIcons: Array<DesktopIcon> = [
         "zoom": 1
     },
     {
+        "category": "Social",
+        "height": 1,
+        "iconname": "Warze on X",
+        "imagedata": "x.svg",
+        "url": "+https://twitter.com/leonhard_tissen",
+        "width": 1,
+        "windowcolor": "#FFFFFF",
+        "windowname": "Warze on X",
+        "zoom": 1
+    },
+    {
         "category": "Games",
         "height": 600,
         "iconname": "Leaderboard",
@@ -240,6 +251,28 @@ export const desktopIcons: Array<DesktopIcon> = [
         "width": 1,
         "windowcolor": "#FFFFFF",
         "windowname": "Warze on GitHub",
+        "zoom": 1
+    },
+    {
+        "category": "Social",
+        "height": 1,
+        "iconname": "Warze on GitLab",
+        "imagedata": "gitlab.svg",
+        "url": "+https://gitlab.com/LeonhardTissen",
+        "width": 1,
+        "windowcolor": "#FFFFFF",
+        "windowname": "Warze on GitLab",
+        "zoom": 1
+    },
+    {
+        "category": "Social",
+        "height": 1,
+        "iconname": "Warze on LinkedIn",
+        "imagedata": "linkedin.svg",
+        "url": "+https://www.linkedin.com/in/leonhard-tissen/",
+        "width": 1,
+        "windowcolor": "#FFFFFF",
+        "windowname": "Warze on LinkedIn",
         "zoom": 1
     },
     {
