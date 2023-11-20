@@ -23,18 +23,20 @@ export function launchProgram(program: DesktopIcon): false {
 	const windows = document.getElementById('windows') as HTMLElement;
 
 	const windowId = (Math.floor(Math.random() * (1e+20))).toString(36);
-	const maximizedWindow = window.innerWidth < 1080 ? 'maximized' : 'programAnimation';
+	const mobileView = window.innerWidth < 1080;
+	const maximizedWindow = mobileView ? 'maximized' : 'programAnimation';
 	const zoomPrc = `${100 / program.zoom}%`;
 	windows.innerHTML += /*html*/`
 	<div id="${windowId}" class="rounded-lg bg-slate-800 bg-opacity-40 backdrop-blur ${maximizedWindow} absolute flex flex-col resize pointer-events-auto overflow-hidden"
 		style="width: ${program.width}px; height: ${program.height}px; top: ${windowY}px; left: ${windowX}px; min-width: 300px; min-height: 30px;">
-		<div class="h-8 flex justify-between flex-row">
-			<div class="grow" onpointerdown="document.getElementById('${windowId}').classList.add('dragging');">
+		<div class="${mobileView ? 'h-16' : 'h-8'} flex justify-between flex-row">
+			<div class="grow flex flex-row items-center" onpointerdown="document.getElementById('${windowId}').classList.add('dragging');">
+				<img src="/icons/${program.imagedata}" class="h-6 w-6 ml-1">
 				<p class="p-1 select-none">${program.windowname}</p>
 			</div>
-			<div class="flex justify-center items-center h-full">
+			<div class="flex justify-center items-stretch h-full">
 				<!-- Reload iframe -->
-				<div class="py-2 hover:bg-white hover:bg-opacity-10 cursor-pointer"
+				<div class="hover:bg-white hover:bg-opacity-10 cursor-pointer flex items-center"
 					onclick="document.getElementById('${windowId}iframe').src = document.getElementById('${windowId}iframe').src"
 				>
 					<svg width="50" height="20">
@@ -42,7 +44,7 @@ export function launchProgram(program: DesktopIcon): false {
 					</svg>
 				</div>
 				<!-- Fullscreen -->
-				<div class="py-2 hover:bg-white hover:bg-opacity-10 cursor-pointer"
+				<div class="hover:bg-white hover:bg-opacity-10 cursor-pointer flex items-center"
 					onclick="document.getElementById('${windowId}iframe').requestFullscreen();"
 				>
 					<svg width="50" height="20">
@@ -50,7 +52,7 @@ export function launchProgram(program: DesktopIcon): false {
 					</svg>
 				</div>
 				<!-- Minimize window -->
-				<div class="py-2 hover:bg-white hover:bg-opacity-10 cursor-pointer"
+				<div class="hover:bg-white hover:bg-opacity-10 cursor-pointer flex items-center"
 					onclick="document.getElementById('${windowId}').classList.add('minimized')";
 				>
 					<svg width="50" height="20">
@@ -58,7 +60,7 @@ export function launchProgram(program: DesktopIcon): false {
 					</svg>
 				</div>
 				<!-- Maximize window -->
-				<div class="py-2 hover:bg-white hover:bg-opacity-10 cursor-pointer"
+				<div class="hover:bg-white hover:bg-opacity-10 cursor-pointer flex items-center"
 					onclick="document.getElementById('${windowId}').classList.toggle('maximized')";
 				>
 					<svg width="50" height="20">
@@ -66,7 +68,7 @@ export function launchProgram(program: DesktopIcon): false {
 					</svg>
 				</div>
 				<!-- Close window -->
-				<div class="py-2 hover:bg-red-500 cursor-pointer"
+				<div class="hover:bg-red-500 cursor-pointer flex items-center"
 					onclick="document.getElementById('${windowId}').remove();"
 				>
 					<svg width="50" height="20">
