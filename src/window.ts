@@ -23,7 +23,7 @@ export function launchProgram(program: DesktopIcon): false {
 	const windows = document.getElementById('windows') as HTMLElement;
 
 	const windowId = (Math.floor(Math.random() * (1e+20))).toString(36);
-	const maximizedWindow = window.innerWidth < 640 ? 'maximized' : '';
+	const maximizedWindow = window.innerWidth < 1080 ? 'maximized' : '';
 	const zoomPrc = `${100 / program.zoom}%`;
 	windows.innerHTML += /*html*/`
 	<div id="${windowId}" class="program rounded-lg bg-slate-800 bg-opacity-40 backdrop-blur ${maximizedWindow} absolute flex flex-col resize pointer-events-auto overflow-hidden"
