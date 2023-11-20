@@ -3,8 +3,9 @@
 	src: url(./assets/fonts/GeistVF.woff2) format(woff2);
 }
 :root {
-	--main: #030C1D;
+	--main: #07101d80;
 	--main-text: #FFF;
+	--main-invert: 0;
 	--taskbar-height: 50px;
 }
 body {

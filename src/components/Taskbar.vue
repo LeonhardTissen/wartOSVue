@@ -3,9 +3,7 @@
 		<div id="left">
 			<LogoIcon class="p-2 h-12 w-12"/>
 		</div>
-		<div id="tasks" class="grow">
-
-		</div>
+		<div id="tasks" class="grow"></div>
 		<div id="tray">
 			<TimeDate/>
 		</div>
@@ -24,3 +22,9 @@ export default {
 	}
 }
 </script>
+
+<style scoped>
+#taskbar {
+	background-color: var(--main);
+}
+</style>

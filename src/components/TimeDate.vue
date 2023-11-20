@@ -29,3 +29,9 @@ function updateTime() {
 	timeElement.innerText = `${hours}:${minutes}`;
 }
 </script>
+
+<style scoped>
+#timeContainer {
+	filter: invert(var(--invert));
+}
+</style>

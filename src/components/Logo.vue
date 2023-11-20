@@ -14,3 +14,9 @@ export default {
 	name: 'LogoIcon',
 }
 </script>
+
+<style scoped>
+svg {
+	filter: invert(var(--invert));
+}
+</style>
