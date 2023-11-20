@@ -1,5 +1,5 @@
 <template>
-	<div id="startmenu" class="absolute left-0 backdrop-blur flex-col justify-between hidden">
+	<div id="startmenu" class="absolute left-0 backdrop-blur flex-col justify-between hidden origin-bottom-left">
 		<div class="pt-8 px-10 flex flex-col">
 			<div id="searchbar" class="bg-white rounded-sm p-2 flex flex-row gap-3">
 				<img src="/icons/search.svg">

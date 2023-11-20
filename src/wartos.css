@@ -50,3 +50,17 @@ html, body {
 .dragging iframe {
 	pointer-events: none;
 }
+#startmenu {
+	animation: appear 0.3s cubic-bezier(.38,1.25,.8,1);
+}
+.program {
+	animation: appear 0.3s cubic-bezier(.4,1.59,.8,1);
+}
+@keyframes appear {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
