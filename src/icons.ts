@@ -417,4 +417,16 @@ export const desktopIcons: Array<DesktopIcon> = [
         "windowname": "Microsoft Edge",
         "zoom": 1
     },
+    {
+        "category": "Miscellaneous",
+        "height": 700,
+        "iconname": "Zip Editor",
+        "imagedata": "winrar.png",
+        "url": "https://zipeditor.warze.org/",
+        "width": 800,
+        "windowcolor": "#FFFFFF",
+        "windowname": "Zip Editor",
+        "zoom": 1
+    },
 ]
+
