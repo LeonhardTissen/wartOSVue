@@ -444,7 +444,7 @@ export const desktopIcons: Array<DesktopIcon> = [
         "height": 700,
         "iconname": "Squishy Earth",
         "imagedata": "earth.png",
-        "url": "http://www.byronknoll.com/earth.html",
+        "url": "https://squishyearth.warze.org",
         "width": 700,
         "windowcolor": "#FFFFFF",
         "windowname": "Squishy Earth",
