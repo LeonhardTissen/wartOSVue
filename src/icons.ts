@@ -16,7 +16,7 @@ export const desktopIcons: Array<DesktopIcon> = [
         "height": 800,
         "iconname": "Command Prompt",
         "imagedata": "cmd.png",
-        "url": "https://warze.org/cmd",
+        "url": "https://cmd.warze.org",
         "width": 800,
         "windowcolor": "#000000",
         "windowname": "Command Prompt",
