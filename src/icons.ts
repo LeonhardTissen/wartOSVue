@@ -397,6 +397,17 @@ export const desktopIcons: Array<DesktopIcon> = [
         "zoom": 1
     },
     {
+        "category": "Games",
+        "height": 600,
+        "iconname": "Snake",
+        "imagedata": "snake.jpg",
+        "url": "https://snake.warze.org/",
+        "width": 800,
+        "windowcolor": "#FFFFFF",
+        "windowname": "Snake",
+        "zoom": 1
+    },
+    {
         "category": "Social",
         "height": 600,
         "iconname": "Profiles",
