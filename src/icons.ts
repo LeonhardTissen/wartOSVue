@@ -439,5 +439,27 @@ export const desktopIcons: Array<DesktopIcon> = [
         "windowname": "Zip Editor",
         "zoom": 1
     },
+    {
+        "category": "Miscellaneous",
+        "height": 700,
+        "iconname": "Squishy Earth",
+        "imagedata": "earth.png",
+        "url": "http://www.byronknoll.com/earth.html",
+        "width": 700,
+        "windowcolor": "#FFFFFF",
+        "windowname": "Squishy Earth",
+        "zoom": 0.7
+    },
+    {
+        "category": "Miscellaneous",
+        "height": 700,
+        "iconname": "Virtual Machine",
+        "imagedata": "virtualbox.png",
+        "url": "https://virtualbox.warze.org",
+        "width": 700,
+        "windowcolor": "#FFFFFF",
+        "windowname": "Virtual Manager",
+        "zoom": 1
+    }
 ]
 
