@@ -21,6 +21,7 @@ export function launchProgram(program: DesktopIcon): false {
 	windowZIndex ++;
 
 	const windows = document.getElementById('windows') as HTMLElement;
+	const tasks = document.getElementById('tasks') as HTMLElement;
 
 	const windowId = (Math.floor(Math.random() * (1e+20))).toString(36);
 	const mobileView = window.innerWidth < 1080;
@@ -81,7 +82,7 @@ export function launchProgram(program: DesktopIcon): false {
 			</div>
 			<!-- Close window -->
 			<div class="hover:bg-red-500 cursor-pointer flex items-center"
-				onclick="document.getElementById('${windowId}').remove();"
+				onclick="document.getElementById('${windowId}').remove(); document.getElementById('${windowId}task').remove();"
 			>
 				<svg width="50" height="20">
 					<path d="M20,5 30,15 M30,5 20,15 25" fill="none" stroke="white" stroke-linejoin="round" stroke-linecap="round" stroke-width="2"></path>
@@ -96,6 +97,23 @@ export function launchProgram(program: DesktopIcon): false {
 	</div>
 	`;
 	windows.appendChild(windowElement);
+
+
+	const taskElement = document.createElement('div');
+	taskElement.id = `${windowId}task`;
+
+	taskElement.innerHTML = /*html*/`
+	<div class="flex h-full items-center border-l-2 bg-white bg-opacity-5 hover:bg-opacity-10 cursor-pointer"
+		style="min-width: 140px"
+		onpointerdown="">
+		<img class="h-full p-2" src="/icons/${program.imagedata}">
+		<p class="whitespace-nowrap">${program.windowname}</p>
+	</div>
+	`
+
+	tasks.appendChild(taskElement);
+
+
 	return false;
 }
 

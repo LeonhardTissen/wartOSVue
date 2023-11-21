@@ -1,10 +1,10 @@
 <template>
-	<div id="taskbar" class="w-full bg-slate-800 bg-opacity-40 backdrop-blur flex justify-between">
-		<div id="left">
+	<div id="taskbar" class="w-view bg-slate-800 bg-opacity-40 backdrop-blur flex justify-between">
+		<div id="left" class="shrink-0">
 			<LogoIcon @pointerdown="clickCornerButton" class="p-2 hover:bg-white hover:bg-opacity-10 cursor-pointer"/>
 		</div>
-		<div id="tasks" class="grow"></div>
-		<div id="tray">
+		<div id="tasks" class="grow flex"></div>
+		<div id="tray" class="shrink-0">
 			<TimeDate/>
 		</div>
 	</div>
