@@ -3,7 +3,8 @@ import { DesktopIcon } from './icons';
 const windowNewOffset = 30;
 let windowX: number = 0;
 let windowY: number = 0;
-let windowZIndex: number = 1;
+let windowZIndex: number = 0;
+window.windowZIndex = windowZIndex;
 
 export function launchProgram(program: DesktopIcon): false {
 	// URLs starting with + means open in a new tab because CORS is unhappy
@@ -18,7 +19,6 @@ export function launchProgram(program: DesktopIcon): false {
 	
 	windowX += windowNewOffset;
 	windowY += windowNewOffset;
-	windowZIndex ++;
 
 	const windows = document.getElementById('windows') as HTMLElement;
 	const tasks = document.getElementById('tasks') as HTMLElement;
@@ -34,16 +34,20 @@ export function launchProgram(program: DesktopIcon): false {
 	} else {
 		windowElement.classList.add('programAnimation');
 	}
-	windowElement.classList.add('absolute', 'flex', 'flex-col', 'resize', 'pointer-events-auto', 'overflow-hidden', 'rounded-lg', 'bg-slate-800', 'bg-opacity-40', 'backdrop-blur')
+	windowElement.classList.add('windowContainer', 'absolute', 'flex', 'flex-col', 'resize', 'pointer-events-auto', 'overflow-hidden', 'rounded-lg', 'bg-slate-800', 'bg-opacity-40', 'backdrop-blur')
 	windowElement.style.width = `${program.width}px`;
 	windowElement.style.height = `${program.height}px`;
 	windowElement.style.top = `${windowY}px`;
 	windowElement.style.left = `${windowX}px`;
+	windowElement.style.zIndex = `${++windowZIndex}`;
 	windowElement.style.minWidth = '300px';
 	windowElement.style.minHeight = '30px';
 	windowElement.innerHTML = /*html*/`
 	<div class="${mobileView ? 'h-16' : 'h-8'} flex justify-between flex-row">
-		<div class="grow flex flex-row items-center" onpointerdown="document.getElementById('${windowId}').classList.add('dragging');">
+		<div class="grow flex flex-row items-center" onpointerdown="
+			let windowElement = document.getElementById('${windowId}');
+			windowElement.classList.add('dragging');
+			windowElement.style.zIndex = ++windowZIndex;">
 			<img src="/icons/${program.imagedata}" class="h-6 w-6 ml-1">
 			<p class="p-1 select-none">${program.windowname}</p>
 		</div>
@@ -103,11 +107,14 @@ export function launchProgram(program: DesktopIcon): false {
 	taskElement.id = `${windowId}task`;
 
 	taskElement.innerHTML = /*html*/`
-	<div class="flex h-full items-center border-l-2 bg-white bg-opacity-5 hover:bg-opacity-10 cursor-pointer"
-		style="min-width: 140px"
-		onpointerdown="">
-		<img class="h-full p-2" src="/icons/${program.imagedata}">
-		<p class="whitespace-nowrap">${program.windowname}</p>
+	<div class="taskContainer flex h-full items-center border-l-2 bg-white bg-opacity-5 hover:bg-opacity-10 cursor-pointer"
+		onpointerdown="
+			let windowElement = document.getElementById('${windowId}');
+			windowElement.style.zIndex = ++windowZIndex;
+			windowElement.classList.remove('minimized');
+		">
+		<img class="h-full p-2" draggable="false" src="/icons/${program.imagedata}">
+		<p class="whitespace-nowrap select-none">${program.windowname}</p>
 	</div>
 	`
 

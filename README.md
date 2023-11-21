@@ -1,4 +1,4 @@
-# vueKickoff
+# wartOSVue
 
 ## Project setup
 ```

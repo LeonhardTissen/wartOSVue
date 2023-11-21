@@ -36,6 +36,7 @@ html, body {
 	top: 0 !important;
 	height: 100% !important;
 	transition: all 0.1s cubic-bezier(.15,.91,.62,1);
+	transform: none !important;
 }
 .snapright, .snapleft {
 	width: 50% !important;
@@ -67,4 +68,18 @@ html, body {
 	to {
 		transform: scale(1);
 	}
+}
+.windowContainer {
+	box-shadow: 1px 1px 2px #000B;
+	transition: box-shadow 0.2s ease-out, transform 0.2s ease-in-out;
+}
+.windowContainer.dragging {
+	box-shadow: 3px 3px 10px #0005;
+	transform: translateY(-2px);
+}
+.taskContainer {
+	flex-grow: 0.1;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width: 200px;
 }

@@ -9,6 +9,7 @@ declare global {
 	interface Window {
 		launchProgram?: (program: DesktopIcon) => void;
 		hideStartMenu?: () => void;
+		windowZIndex?: number;
 	}
 }
 
