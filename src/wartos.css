@@ -81,5 +81,14 @@ html, body {
 	flex-grow: 0.1;
 	text-overflow: ellipsis;
 	overflow: hidden;
-	max-width: 200px;
+	width: 200px;
+	animation: taskAppear 0.2s cubic-bezier(.3,1.25,.74,1.01);
+}
+@keyframes taskAppear {
+	from {
+		width: 0px;
+	}
+	to {
+		width: 200px;
+	}
 }

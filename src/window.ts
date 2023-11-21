@@ -114,7 +114,7 @@ export function launchProgram(program: DesktopIcon): false {
 			windowElement.classList.remove('minimized');
 		">
 		<img class="h-full p-2" draggable="false" src="/icons/${program.imagedata}">
-		<p class="whitespace-nowrap select-none">${program.windowname}</p>
+		<p class="select-none whitespace-nowrap">${program.iconname}</p>
 	</div>
 	`
 
