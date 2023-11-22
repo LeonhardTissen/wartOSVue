@@ -8,7 +8,10 @@
 				:key="desktopIcon.iconname"
 				@click.prevent="launchProgram({ ...desktopIcon })"
 			>
-				<img class="icon m-auto h-14 rounded-lg pointer-events-none" :src="'/icons/' + desktopIcon.imagedata">
+				<div class="relative w-14 h-14 m-auto pointer-events-none">
+					<img class="icon rounded-lg pointer-events-none" :src="'/icons/' + desktopIcon.imagedata">
+					<img v-if="!('zoom' in desktopIcon)" class="absolute bottom-0 left-0" src="/icons/external.png">
+				</div>
 				<p class="name text-center">{{ desktopIcon.iconname }}</p>
 			</a>
 		</div>
