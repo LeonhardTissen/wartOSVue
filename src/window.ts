@@ -1,4 +1,4 @@
-import { DesktopIcon } from './icons';
+import { DesktopIcon, DesktopLink } from './icons';
 
 const windowNewOffset = 30;
 let windowX: number = 0;
@@ -6,7 +6,7 @@ let windowY: number = 0;
 let windowZIndex: number = 0;
 window.windowZIndex = windowZIndex;
 
-export function launchProgram(program: DesktopIcon): false {
+export function launchProgram(program: DesktopIcon | DesktopLink): false {
 	// URLs starting with + means open in a new tab because CORS is unhappy
 	let url: string = program.url;
 	if (program.url.startsWith('+')) {
@@ -15,6 +15,9 @@ export function launchProgram(program: DesktopIcon): false {
 		return false;
 	} else if (program.url.startsWith('/')) {
 		url = 'https://warze.org' + url;
+	}
+	if (!('zoom' in program)) {
+		return false;
 	}
 	
 	windowX += windowNewOffset;

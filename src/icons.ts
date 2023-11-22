@@ -1,4 +1,4 @@
-export interface DesktopIcon {
+export type DesktopIcon = {
     category: string;
     width: number;
     height: number;
@@ -8,7 +8,7 @@ export interface DesktopIcon {
     url: string;
     windowname: string;
 }
-export interface DesktopLink {
+export type DesktopLink = {
     category: string;
     iconname: string;
     imagedata: string;
