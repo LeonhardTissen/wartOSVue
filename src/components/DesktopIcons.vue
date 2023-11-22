@@ -1,19 +1,24 @@
 <template>
 	<div id="icons" @click="hideStartMenu" class="relative flex grow flex-col flex-wrap content-start gap-1 select-none p-2">
+		<!-- Container for program windows -->
 		<div id="windows" class="absolute top-0 left-0 w-full h-full pointer-events-none"></div>
+		<!-- Loop through all icons -->
 		<a :href="desktopIcon.url.replace('+', '')"
 			class="link w-28 h-28 cursor-pointer hover:bg-white hover:bg-opacity-10 rounded-lg p-1"
 			v-for="desktopIcon in desktopIcons.sort((a, b) => a.iconname.localeCompare(b.iconname))"
 			:key="desktopIcon.iconname"
 			@click.prevent="launchProgram({ ...desktopIcon })"
 		>
-		<div class="relative w-14 h-14 m-auto pointer-events-none">
-			<img class="icon rounded-lg pointer-events-none" :src="'/icons/' + desktopIcon.imagedata">
-			<img v-if="!('zoom' in desktopIcon)" class="absolute bottom-0 left-0" src="/icons/external.png">
-		</div>
-		<p class="name text-center">{{ desktopIcon.iconname }}</p>
-	</a>
-</div>
+			<!-- Icon image -->
+			<div class="relative w-14 h-14 m-auto pointer-events-none">
+				<img class="icon rounded-lg pointer-events-none" :src="'/icons/' + desktopIcon.imagedata">
+				<!-- Show external icon if icon leads to a new tab -->
+				<img v-if="!('width' in desktopIcon)" class="absolute bottom-0 left-0" src="/icons/external.png">
+			</div>
+			<!-- Icon Name below the image-->
+			<p class="name text-center">{{ desktopIcon.iconname }}</p>
+		</a>
+	</div>
 </template>
 
 <script lang="ts">
