@@ -1,18 +1,16 @@
-export type DesktopIcon = {
-    category: string;
-    width: number;
-    height: number;
-    zoom: number;
-    iconname: string;
-    imagedata: string;
-    url: string;
-    windowname: string;
-}
+// External links to new tabs that don't require CORS
 export type DesktopLink = {
-    category: string;
-    iconname: string;
-    imagedata: string;
-    url: string;
+    category: string;   // Only used for providing search results in the start menu
+    iconname: string;   // Name of the desktop icon shown below the image
+    imagedata: string;  // URL or base64 data of the desktop icon image
+    url: string;        // URL of the program that's used in the Iframe's source
+    windowname?: string; // Name of the window when launched, defaults to "iconname"
+}
+
+export type DesktopIcon = DesktopLink & {
+    width: number;      // Width of the Iframe
+    height: number;     // Height of the Iframe
+    zoom: number;       // Scale transform applied to the Iframe, absolute dimensions are maintained
 }
 
 export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
@@ -26,7 +24,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "cmd.png",
         "url": "https://cmd.warze.org",
         "width": 800,
-        "windowname": "Command Prompt",
         "zoom": 1
     },
     {
@@ -36,7 +33,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "microgame.svg",
         "url": "https://microgame.warze.org",
         "width": 800,
-        "windowname": "microGame",
         "zoom": 0.5
     },
     {
@@ -46,7 +42,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "laibart.png",
         "url": "https://fun.warze.org/laibart",
         "width": 700,
-        "windowname": "Laibart",
         "zoom": 1
     },
     {
@@ -96,7 +91,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "randomspace.jpg",
         "url": "https://leonhardtissen.github.io/spaceBackgroundJS/",
         "width": 600,
-        "windowname": "Random Space",
         "zoom": 1
     },
     {
@@ -106,7 +100,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "test.png",
         "url": "https://warze.org/test",
         "width": 800,
-        "windowname": "Test",
         "zoom": 1
     },
     {
@@ -126,7 +119,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "guy.png",
         "url": "https://fun.warze.org/guy",
         "width": 600,
-        "windowname": "Guy",
         "zoom": 0.4
     },
     {
@@ -136,7 +128,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "casino.png",
         "url": "https://warze.org/casino",
         "width": 800,
-        "windowname": "Casino",
         "zoom": 0.5
     },
     {
@@ -146,7 +137,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "jollyworld.jpg",
         "url": "https://jollyworld.app/",
         "width": 800,
-        "windowname": "JollyWorld",
         "zoom": 1
     },
     {
@@ -176,7 +166,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "permaplace.png",
         "url": "https://warze.org/permaplace",
         "width": 800,
-        "windowname": "Permaplace",
         "zoom": 0.8
     },
     {
@@ -186,7 +175,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "notepad.webp",
         "url": "https://fun.warze.org/notepad",
         "width": 600,
-        "windowname": "Notepad",
         "zoom": 1
     },
     {
@@ -196,7 +184,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "gifun.png",
         "url": "https://warze.org/gifun",
         "width": 700,
-        "windowname": "Gifun",
         "zoom": 0.7
     },
     {
@@ -206,7 +193,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "leaderboard.png",
         "url": "https://warze.org/lb",
         "width": 800,
-        "windowname": "Leaderboard",
         "zoom": 0.6
     },
     {
@@ -216,7 +202,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "happywheels.jpg",
         "url": "https://happywheelslevels.netlify.app/",
         "width": 800,
-        "windowname": "Happy Wheels",
         "zoom": 0.5
     },
     {
@@ -236,7 +221,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "workshop.svg",
         "url": "https://warze.org/wartos/workshop",
         "width": 820,
-        "windowname": "Theme Store",
         "zoom": 1
     },
     {
@@ -246,7 +230,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "calculator.png",
         "url": "https://fun.warze.org/calculator",
         "width": 400,
-        "windowname": "Calculator",
         "zoom": 1
     },
     {
@@ -256,7 +239,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "doomed.jpg",
         "url": "https://doomed.io/",
         "width": 800,
-        "windowname": "Doomed.io",
         "zoom": 1
     },
     {
@@ -266,7 +248,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "lightson.png",
         "url": "https://lightson.warze.org/",
         "width": 600,
-        "windowname": "Lights on!",
         "zoom": 0.6
     },
     {
@@ -276,7 +257,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "flagquiz.png",
         "url": "https://flagquiz.warze.org/",
         "width": 800,
-        "windowname": "Flag Quiz",
         "zoom": 0.8
     },
     {
@@ -296,7 +276,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "trash.png",
         "url": "https://fun.warze.org/",
         "width": 600,
-        "windowname": "Fun",
         "zoom": 1
     },
     {
@@ -306,7 +285,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "pushy.png",
         "url": "https://pushy.warze.org/",
         "width": 950,
-        "windowname": "Pushy",
         "zoom": 1
     },
     {
@@ -316,7 +294,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "snake.jpg",
         "url": "https://snake.warze.org/",
         "width": 800,
-        "windowname": "Snake",
         "zoom": 1
     },
     {
@@ -336,7 +313,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "edge.svg",
         "url": "https://bing.com/",
         "width": 800,
-        "windowname": "Microsoft Edge",
         "zoom": 1
     },
     {
@@ -346,7 +322,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "winrar.png",
         "url": "https://zipeditor.warze.org/",
         "width": 800,
-        "windowname": "Zip Editor",
         "zoom": 1
     },
     {
@@ -356,7 +331,6 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "imagedata": "earth.png",
         "url": "https://squishyearth.warze.org",
         "width": 700,
-        "windowname": "Squishy Earth",
         "zoom": 0.7
     },
     {

@@ -48,7 +48,7 @@ export function launchProgram(program: DesktopIcon | DesktopLink): false {
 			windowElement.classList.add('dragging');
 			windowElement.style.zIndex = ++windowZIndex;">
 			<img src="/icons/${program.imagedata}" class="h-6 w-6 ml-1">
-			<p class="p-1 select-none">${program.windowname}</p>
+			<p class="p-1 select-none">${program.windowname || program.iconname}</p>
 		</div>
 		<div class="flex justify-center items-stretch h-full">
 			<!-- Reload iframe -->
