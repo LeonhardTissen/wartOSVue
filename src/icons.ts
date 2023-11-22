@@ -8,8 +8,14 @@ export interface DesktopIcon {
     url: string;
     windowname: string;
 }
+export interface DesktopLink {
+    category: string;
+    iconname: string;
+    imagedata: string;
+    url: string;
+}
 
-export const desktopIcons: Array<DesktopIcon> = [
+export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
     {
         "category": "Miscellaneous",
         "height": 800,
@@ -25,7 +31,7 @@ export const desktopIcons: Array<DesktopIcon> = [
         "height": 600,
         "iconname": "microGame",
         "imagedata": "microgame.svg",
-        "url": "https://leonhardtissen.github.io/microGameJS/",
+        "url": "https://microgame.warze.org",
         "width": 800,
         "windowname": "microGame",
         "zoom": 0.5
@@ -191,26 +197,6 @@ export const desktopIcons: Array<DesktopIcon> = [
         "zoom": 0.7
     },
     {
-        "category": "Social",
-        "height": 1,
-        "iconname": "Warze on YouTube",
-        "imagedata": "youtube.svg",
-        "url": "+https://youtube.com/warze",
-        "width": 1,
-        "windowname": "Warze on YouTube",
-        "zoom": 1
-    },
-    {
-        "category": "Social",
-        "height": 1,
-        "iconname": "Warze on X",
-        "imagedata": "x.svg",
-        "url": "+https://twitter.com/leonhard_tissen",
-        "width": 1,
-        "windowname": "Warze on X",
-        "zoom": 1
-    },
-    {
         "category": "Games",
         "height": 600,
         "iconname": "Leaderboard",
@@ -219,36 +205,6 @@ export const desktopIcons: Array<DesktopIcon> = [
         "width": 800,
         "windowname": "Leaderboard",
         "zoom": 0.6
-    },
-    {
-        "category": "Social",
-        "height": 1,
-        "iconname": "Warze on GitHub",
-        "imagedata": "github.png",
-        "url": "+https://github.com/LeonhardTissen",
-        "width": 1,
-        "windowname": "Warze on GitHub",
-        "zoom": 1
-    },
-    {
-        "category": "Social",
-        "height": 1,
-        "iconname": "Warze on GitLab",
-        "imagedata": "gitlab.svg",
-        "url": "+https://gitlab.com/LeonhardTissen",
-        "width": 1,
-        "windowname": "Warze on GitLab",
-        "zoom": 1
-    },
-    {
-        "category": "Social",
-        "height": 1,
-        "iconname": "Warze on LinkedIn",
-        "imagedata": "linkedin.svg",
-        "url": "+https://www.linkedin.com/in/leonhard-tissen/",
-        "width": 1,
-        "windowname": "Warze on LinkedIn",
-        "zoom": 1
     },
     {
         "category": "Games",
@@ -319,16 +275,6 @@ export const desktopIcons: Array<DesktopIcon> = [
         "width": 800,
         "windowname": "Flag Quiz",
         "zoom": 0.8
-    },
-    {
-        "category": "Miscellaneous",
-        "height": 1,
-        "iconname": "Discord",
-        "imagedata": "discord.png",
-        "url": "+https://discord.gg/jtcqgvkZY7",
-        "width": 1,
-        "windowname": "Discord",
-        "zoom": 1
     },
     {
         "category": "Games",
@@ -419,6 +365,42 @@ export const desktopIcons: Array<DesktopIcon> = [
         "width": 700,
         "windowname": "Virtual Manager",
         "zoom": 1
-    }
+    },
+    {
+        "category": "Social",
+        "iconname": "Warze on YouTube",
+        "imagedata": "youtube.svg",
+        "url": "+https://youtube.com/warze",
+    },
+    {
+        "category": "Miscellaneous",
+        "iconname": "Discord",
+        "imagedata": "discord.png",
+        "url": "+https://discord.gg/jtcqgvkZY7",
+    },
+    {
+        "category": "Social",
+        "iconname": "Warze on GitHub",
+        "imagedata": "github.png",
+        "url": "+https://github.com/LeonhardTissen",
+    },
+    {
+        "category": "Social",
+        "iconname": "Warze on GitLab",
+        "imagedata": "gitlab.svg",
+        "url": "+https://gitlab.com/LeonhardTissen",
+    },
+    {
+        "category": "Social",
+        "iconname": "Warze on LinkedIn",
+        "imagedata": "linkedin.svg",
+        "url": "+https://www.linkedin.com/in/leonhard-tissen/",
+    },
+    {
+        "category": "Social",
+        "iconname": "Warze on X",
+        "imagedata": "x.svg",
+        "url": "+https://twitter.com/leonhard_tissen",
+    },
 ]
 

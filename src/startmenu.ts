@@ -23,8 +23,8 @@ export function updateSearch(searchQuery: string) {
 	searchresults.innerText = '';
 
 	const matchingDesktopIcons = desktopIcons.filter((desktopIcon) => {
-		const { iconname, category, windowname } = desktopIcon;
-		const searchString = (iconname + category + windowname).toLowerCase();
+		const { iconname, category } = desktopIcon;
+		const searchString = (iconname + category).toLowerCase();
 		return searchString.includes(searchQuery);
 	});
 
