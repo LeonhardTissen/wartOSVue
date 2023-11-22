@@ -7,16 +7,12 @@ let windowZIndex: number = 0;
 window.windowZIndex = windowZIndex;
 
 export function launchProgram(program: DesktopIcon | DesktopLink): false {
+	const isExternal = !('width' in program);
+
 	// URLs starting with + means open in a new tab because CORS is unhappy
-	let url: string = program.url;
-	if (program.url.startsWith('+')) {
+	if (isExternal) {
 		const trimmedUrl = program.url.replace('+', '');
 		window.open(trimmedUrl, '_blank');
-		return false;
-	} else if (program.url.startsWith('/')) {
-		url = 'https://warze.org' + url;
-	}
-	if (!('zoom' in program)) {
 		return false;
 	}
 	
@@ -98,7 +94,7 @@ export function launchProgram(program: DesktopIcon | DesktopLink): false {
 		</div>
 	</div>
 	<div class="grow">
-		<iframe id="${windowId}iframe" src="${url}" class="border-none outline-none origin-top-left"
+		<iframe id="${windowId}iframe" src="${program.url}" class="border-none outline-none origin-top-left"
 			style="width: ${zoomPrc}; height: ${zoomPrc}; transform: scale(${program.zoom});"
 		></iframe>
 	</div>

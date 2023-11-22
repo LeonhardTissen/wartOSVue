@@ -16,6 +16,9 @@ export type DesktopLink = {
 }
 
 export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
+
+    // In-page apps, these must allow CORS.
+
     {
         "category": "Miscellaneous",
         "height": 800,
@@ -366,41 +369,44 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "windowname": "Virtual Manager",
         "zoom": 1
     },
+
+    // External links that open a new tab when clicked
+
     {
         "category": "Social",
         "iconname": "Warze on YouTube",
         "imagedata": "youtube.svg",
-        "url": "+https://youtube.com/warze",
+        "url": "https://youtube.com/warze",
     },
     {
         "category": "Miscellaneous",
         "iconname": "Discord",
         "imagedata": "discord.png",
-        "url": "+https://discord.gg/jtcqgvkZY7",
+        "url": "https://discord.gg/jtcqgvkZY7",
     },
     {
         "category": "Social",
         "iconname": "Warze on GitHub",
         "imagedata": "github.png",
-        "url": "+https://github.com/LeonhardTissen",
+        "url": "https://github.com/LeonhardTissen",
     },
     {
         "category": "Social",
         "iconname": "Warze on GitLab",
         "imagedata": "gitlab.svg",
-        "url": "+https://gitlab.com/LeonhardTissen",
+        "url": "https://gitlab.com/LeonhardTissen",
     },
     {
         "category": "Social",
         "iconname": "Warze on LinkedIn",
         "imagedata": "linkedin.svg",
-        "url": "+https://www.linkedin.com/in/leonhard-tissen/",
+        "url": "https://www.linkedin.com/in/leonhard-tissen/",
     },
     {
         "category": "Social",
         "iconname": "Warze on X",
         "imagedata": "x.svg",
-        "url": "+https://twitter.com/leonhard_tissen",
+        "url": "https://twitter.com/leonhard_tissen",
     },
 ]
 
