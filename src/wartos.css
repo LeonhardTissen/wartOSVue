@@ -13,13 +13,13 @@
 	--taskbar-height: 48px;
 }
 body {
-	background-image: url('./assets/images/win11wallpaper.jpg');
+	background-image: url('./assets/images/win11wallpaper.avif');
 	background-size: cover;
 	background-position: center;
 }
 html, body {
 	margin: 0;
-	background-color: var(--main);
+	background-color: black;
 	color: var(--main-text);
 	overscroll-behavior: contain;
 }
@@ -91,4 +91,7 @@ html, body {
 	to {
 		width: 200px;
 	}
+}
+*[data-pixelated="true"] {
+	image-rendering: pixelated;
 }

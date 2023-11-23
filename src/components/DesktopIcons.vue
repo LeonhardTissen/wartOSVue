@@ -11,7 +11,10 @@
 		>
 			<!-- Icon image -->
 			<div class="relative w-14 h-14 m-auto pointer-events-none">
-				<img :alt="desktopIcon.iconname" class="icon rounded-lg pointer-events-none" :src="'/icons/' + desktopIcon.imagedata">
+				<img :alt="desktopIcon.iconname"
+					v-bind:data-pixelated="desktopIcon.iconpixelated"
+					class="icon rounded-lg pointer-events-none w-full"
+					:src="'/icons/' + desktopIcon.imagedata">
 				<!-- Show external icon if icon leads to a new tab -->
 				<img v-if="!('width' in desktopIcon)" class="absolute bottom-0 left-0" alt="External Link" src="/icons/external.png">
 			</div>
