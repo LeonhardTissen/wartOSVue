@@ -89,7 +89,7 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "height": 600,
         "iconname": "Random Space",
         "imagedata": "randomspace.jpg",
-        "url": "https://leonhardtissen.github.io/spaceBackgroundJS/",
+        "url": "https://spacebackground.warze.org/",
         "width": 600,
         "zoom": 1
     },
@@ -107,7 +107,7 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "height": 600,
         "iconname": "Cursor Jumper",
         "imagedata": "cursor.png",
-        "url": "https://leonhardtissen.github.io/cursorJumperJS/",
+        "url": "https://cursorjumper.warze.org/",
         "width": 800,
         "windowname": "CursorJumperJS",
         "zoom": 1
@@ -200,7 +200,7 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "height": 600,
         "iconname": "Happy Wheels",
         "imagedata": "happywheels.jpg",
-        "url": "https://happywheelslevels.netlify.app/",
+        "url": "https://happywheels.warze.org/",
         "width": 800,
         "zoom": 0.5
     },
@@ -209,7 +209,7 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "height": 600,
         "iconname": "Discord Roles",
         "imagedata": "discordaboutmeroles.png",
-        "url": "https://leonhardtissen.github.io/DiscordAboutMeRoles/",
+        "url": "https://discordroles.warze.org/",
         "width": 550,
         "windowname": "Discord About Me Roles",
         "zoom": 1
