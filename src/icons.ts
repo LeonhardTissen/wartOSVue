@@ -190,7 +190,7 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "height": 600,
         "iconname": "Notepad",
         "iconpixelated": false,
-        "imagedata": "notepad.webp",
+        "imagedata": "notepad.png",
         "url": "https://fun.warze.org/notepad",
         "width": 600,
         "zoom": 1
