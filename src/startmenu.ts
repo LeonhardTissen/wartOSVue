@@ -34,7 +34,7 @@ export function updateSearch(searchQuery: string) {
 		<div id="" class="p-2 flex items-center gap-2 hover:bg-white hover:bg-opacity-10 cursor-pointer"
 			onclick="launchProgram(${program}); hideStartMenu();"
 		>
-			<img src="/icons/${desktopIcon.imagedata}" class="rounded-lg h-8 w-8">
+			<img alt="${desktopIcon.iconname}" src="/icons/${desktopIcon.imagedata}" class="rounded-lg h-8 w-8">
 			<p>${desktopIcon.iconname}</p>
 		</div>
 		`

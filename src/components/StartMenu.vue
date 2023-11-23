@@ -3,7 +3,7 @@
 		<!-- Search bar to look for apps-->
 		<div class="pt-8 px-10 flex flex-col">
 			<div id="searchbar" class="bg-white rounded-sm p-2 flex flex-row gap-3">
-				<img src="/icons/search.svg">
+				<img alt="Search Icon" src="/icons/search.svg">
 				<input @input="searchForIcons" placeholder="Type here to search" class="border-none outline-none text-black">
 			</div>
 			<!-- Search results for matching apps -->
@@ -12,11 +12,11 @@
 		<!-- Start menu footer with link to portfolio -->
 		<div id="startfooter" class="p-4 px-8 flex justify-between gap-4">
 			<a class="flex gap-4 items-center" href="https://leonhard.warze.org/">
-				<img src="/leo2_zoom_normal_48px.png" class="rounded-full h-8">
+				<img alt="Leonhard Tissen" src="/leo2_zoom_normal_48px.png" class="rounded-full h-8">
 				<span>Leonhard Tissen</span>
 			</a>
 			<!-- Fake shutdown icon -->
-			<img src="/icons/shutdown-31.svg" class="h-8">
+			<img alt="Shutdown Icon" src="/icons/shutdown-31.svg" class="h-8">
 		</div>
 	</div>
 </template>

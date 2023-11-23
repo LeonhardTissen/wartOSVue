@@ -11,9 +11,9 @@
 		>
 			<!-- Icon image -->
 			<div class="relative w-14 h-14 m-auto pointer-events-none">
-				<img class="icon rounded-lg pointer-events-none" :src="'/icons/' + desktopIcon.imagedata">
+				<img :alt="desktopIcon.iconname" class="icon rounded-lg pointer-events-none" :src="'/icons/' + desktopIcon.imagedata">
 				<!-- Show external icon if icon leads to a new tab -->
-				<img v-if="!('width' in desktopIcon)" class="absolute bottom-0 left-0" src="/icons/external.png">
+				<img v-if="!('width' in desktopIcon)" class="absolute bottom-0 left-0" alt="External Link" src="/icons/external.png">
 			</div>
 			<!-- Icon Name below the image-->
 			<p class="name text-center">{{ desktopIcon.iconname }}</p>

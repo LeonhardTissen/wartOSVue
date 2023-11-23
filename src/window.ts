@@ -47,7 +47,7 @@ export function launchProgram(program: DesktopIcon | DesktopLink): false {
 			let windowElement = document.getElementById('${windowId}');
 			windowElement.classList.add('dragging');
 			windowElement.style.zIndex = ++windowZIndex;">
-			<img src="/icons/${program.imagedata}" class="h-6 w-6 ml-1">
+			<img alt="${program.iconname}" src="/icons/${program.imagedata}" class="h-6 w-6 ml-1">
 			<p class="p-1 select-none">${program.windowname || program.iconname}</p>
 		</div>
 		<div class="flex justify-center items-stretch h-full">
@@ -112,7 +112,7 @@ export function launchProgram(program: DesktopIcon | DesktopLink): false {
 			windowElement.style.zIndex = ++windowZIndex;
 			windowElement.classList.remove('minimized');
 		">
-		<img class="h-full p-2" draggable="false" src="/icons/${program.imagedata}">
+		<img alt="${program.iconname}" class="h-full p-2" draggable="false" src="/icons/${program.imagedata}">
 		<p class="select-none whitespace-nowrap">${program.iconname}</p>
 	</div>
 	`
