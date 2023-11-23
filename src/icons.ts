@@ -311,7 +311,7 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "category": "Games",
         "height": 666,
         "iconname": "Pushy",
-        "iconpixelated": false,
+        "iconpixelated": true,
         "imagedata": "pushy.png",
         "url": "https://pushy.warze.org/",
         "width": 950,
