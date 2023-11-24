@@ -388,7 +388,7 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "url": "https://warze.org/cloud",
         "width": 700,
         "windowname": "Explorer",
-        "zoom": 1
+        "zoom": 0.8
     },
 
     // External links that open a new tab when clicked
