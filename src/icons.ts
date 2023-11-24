@@ -379,6 +379,17 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "windowname": "Virtual Manager",
         "zoom": 1
     },
+    {
+        "category": "Miscellaneous",
+        "height": 700,
+        "iconname": "Explorer",
+        "iconpixelated": false,
+        "imagedata": "explorer.png",
+        "url": "https://warze.org/cloud",
+        "width": 700,
+        "windowname": "Explorer",
+        "zoom": 1
+    },
 
     // External links that open a new tab when clicked
 
