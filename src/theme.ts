@@ -23,8 +23,10 @@ window.addEventListener('message', function (ev) {
 	setTheme(theme);
 });
 
-function setTheme(theme: Theme) {
+function setTheme(theme: Theme): void {
+	if (theme === undefined) return;
 	document.documentElement.style.setProperty('--invert', `${theme.invert}`);
 	document.documentElement.style.setProperty('--main', theme.invert ? '#DDDDDD80' : '#1e293b80');
-	document.body.style.backgroundImage = `url(https://warze.org/wartos/workshop/theme/${theme.name}?source=1)`;
+	const themeBackgroundUrl = `https://warze.org/wartos/workshop/theme/${theme.name}?source=1`;
+	document.body.style.backgroundImage = `url(${themeBackgroundUrl})`;
 }
