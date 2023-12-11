@@ -24,7 +24,7 @@ window.addEventListener('message', function (ev) {
 });
 
 function setTheme(theme: Theme): void {
-	if (theme === undefined) return;
+	if (theme === undefined || theme.name === undefined) return;
 	document.documentElement.style.setProperty('--invert', `${theme.invert}`);
 	document.documentElement.style.setProperty('--main', theme.invert ? '#DDDDDD80' : '#1e293b80');
 	const themeBackgroundUrl = `https://warze.org/wartos/workshop/theme/${theme.name}?source=1`;
