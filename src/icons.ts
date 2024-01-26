@@ -390,6 +390,17 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "windowname": "Explorer",
         "zoom": 0.8
     },
+    {
+        "category": "Games",
+        "height": 510,
+        "iconname": "Ball 2",
+        "iconpixelated": false,
+        "imagedata": "ball2.png",
+        "url": "https://ball2.warze.org",
+        "width": 480,
+        "windowname": "Ball 2",
+        "zoom": 1
+    },
 
     // External links that open a new tab when clicked
 
