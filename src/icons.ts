@@ -269,12 +269,22 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
     {
         "category": "Games",
         "height": 600,
-        "iconname": "Lights on!",
+        "iconname": "Lights On!",
         "iconpixelated": false,
         "imagedata": "lightson.png",
         "url": "https://lightson.warze.org/",
         "width": 600,
         "zoom": 0.6
+    },
+	{
+        "category": "Games",
+        "height": 600,
+        "iconname": "Lights On! 2",
+        "iconpixelated": false,
+        "imagedata": "lightson2.png",
+        "url": "https://lightson2.warze.org/",
+        "width": 600,
+        "zoom": 1
     },
     {
         "category": "Games",
