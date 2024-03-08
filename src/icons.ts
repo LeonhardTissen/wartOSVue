@@ -411,50 +411,5 @@ export const desktopIcons: Array<DesktopIcon | DesktopLink> = [
         "windowname": "Ball 2",
         "zoom": 1
     },
-
-    // External links that open a new tab when clicked
-
-    {
-        "category": "Social",
-        "iconname": "Warze on YouTube",
-        "iconpixelated": false,
-        "imagedata": "youtube.svg",
-        "url": "https://youtube.com/warze",
-    },
-    {
-        "category": "Miscellaneous",
-        "iconname": "Discord",
-        "iconpixelated": false,
-        "imagedata": "discord.png",
-        "url": "https://discord.gg/jtcqgvkZY7",
-    },
-    {
-        "category": "Social",
-        "iconname": "Warze on GitHub",
-        "iconpixelated": false,
-        "imagedata": "github.png",
-        "url": "https://github.com/LeonhardTissen",
-    },
-    {
-        "category": "Social",
-        "iconname": "Warze on GitLab",
-        "iconpixelated": false,
-        "imagedata": "gitlab.svg",
-        "url": "https://gitlab.com/LeonhardTissen",
-    },
-    {
-        "category": "Social",
-        "iconname": "Warze on LinkedIn",
-        "iconpixelated": false,
-        "imagedata": "linkedin.svg",
-        "url": "https://www.linkedin.com/in/leonhard-tissen/",
-    },
-    {
-        "category": "Social",
-        "iconname": "Warze on X",
-        "iconpixelated": false,
-        "imagedata": "x.svg",
-        "url": "https://twitter.com/leonhard_tissen",
-    },
 ]
 
